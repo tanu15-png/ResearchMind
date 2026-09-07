@@ -1,5 +1,5 @@
 from langchain.agents import create_agent
-from langchain_mistralai import ChatMistralAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from tools import web_search , scrape_url 
@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #model setup 
-llm = ChatMistralAI(model = "mistral-medium-3-5",temperature=0)
+llm = ChatGoogleGenerativeAI(model = "gemini-3.5-flash-lite",temperature=0)
 
 
 #1st agent 

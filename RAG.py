@@ -1,14 +1,28 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_mistralai import MistralAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 
 
-embedding_model = MistralAIEmbeddings(
-    model="mistral-embed"
+embedding_model = GoogleGenerativeAIEmbeddings(
+    model="gemini-embedding-001",
+    google_api_key=os.getenv("GEMINI_API_KEY")
 )
 
 
-def create_vector_store(text: str):
+def create_vector_store(text):
+
+    if isinstance(text, list):
+        text = "\n\n".join(
+            str(item) for item in text
+        )
+
+    elif not isinstance(text, str):
+        text = str(text)
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,

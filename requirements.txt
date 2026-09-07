@@ -5,9 +5,10 @@ langchain-community
 langgraph
 langchain-chroma
 
-# Mistral API / LangChain integration
-langchain-mistralai
-mistralai
+# Google Gemini API / LangChain integration
+langchain-google-genai
+google-genai
+
 
 # Tavily web search
 tavily-python
