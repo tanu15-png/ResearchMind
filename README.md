@@ -24,7 +24,7 @@ Researching any topic thoroughly today means juggling multiple tabs, sifting thr
 - **Live pipeline visualization** — a real-time UI panel showing each agent's status (waiting / running / done) as the pipeline executes.
 - **Clean, modern web interface** built with Streamlit, including example topic chips for quick testing.
 - **Downloadable output** — export the final report as a Markdown (`.md`) file.
-- **Actual AI agent usage** — powered by [LangChain](https://www.langchain.com/) agents and [Mistral AI](https://mistral.ai/) (`mistral-medium-3-5`) for reasoning, tool use, and text generation.
+- **Actual AI agent usage** — powered by [LangChain](https://www.langchain.com/) agents and [GEMINI AI](https://gemini.google.com/) (`gemini-3.5-flash-lite`) for reasoning, tool use, and text generation.
 
 ### Why RAG Is Useful in ResearchMind
 
@@ -80,7 +80,6 @@ RAG is useful in ResearchMind because it:
 |---|---|
 | Frontend / UI | [Streamlit](https://streamlit.io/) |
 | Agent Framework | [LangChain](https://www.langchain.com/) (`create_agent`) |
-| LLM | [Mistral AI](https://mistral.ai/) via `langchain-mistralai` |
 | Web Search | [Tavily API](https://tavily.com/) |
 | Web Scraping | `requests` + `BeautifulSoup4` |
 | RAG / Retrieval | Embeddings + Vector Store |
@@ -150,7 +149,7 @@ multi_agent_news/
                              ▼
                     ┌─────────────────┐
                     │   WRITER CHAIN  │
-                    │ Mistral AI LLM  │
+                    │ GEMINI AI LLM   │
                     └────────┬────────┘
                              │
                              ▼
@@ -201,13 +200,10 @@ Create a `.env` file in the project root with the following keys:
 
 ```env
 TAVILY_API_KEY=your_tavily_api_key_here
-MISTRAL_API_KEY=your_mistral_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-- Get a Tavily API key from [tavily.com](https://tavily.com/)
-- Get a Mistral API key from [console.mistral.ai](https://console.mistral.ai/)
 
----
 
 ## ▶️ Usage
 
